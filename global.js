@@ -13,8 +13,8 @@ function visitBfs(node, func) {
                 if (child.tagName == "LI") {
 
                     $( child ).addClass( "width-" + breadth );
-                    console.log(child);   /* displays item's html tag / attributes  */
-                    console.log(node.children.length);   /* displays number of items in level (breadth) */
+                    // console.log(child);   /* displays item's html tag / attributes  */
+                    // console.log(node.children.length);   /* displays number of items in level (breadth) */
                     // console.log(child.tagName);
                     // console.log($( child ).siblings());
                 }
