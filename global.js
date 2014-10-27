@@ -23,26 +23,26 @@ function visitBfs(node, func) {
  
         _.each(node.children, function (child) {
             q.push(child);
-            // console.log(child);
         });
     }
 }
 
 jQuery(document).ready(function ($) {
     var node = document.getElementsByClassName('menu')[0];
-    // console.log(node);
     visitBfs(node);
 
-    /*$( "li" ).each(function( index, value ) {
-    	$( this ).addClass( "ul-test" );
-    	// console.log( index + ": " + $( this ).text() );
-    	console.log(value);
-    });*/
-
-    /*var listItems = $(".menu li");
-    listItems.each(function(li) {
-        console.log($(this).attr('class'));
-    });*/
+    $('.options li').on('click', function(event){
+        //remove all active classes from the options
+        $('.options li').each(function(index){
+            $(this).removeClass('active');
+        });
+        $(this).addClass('active');
+        //remove all classes from the nav
+        $('body').removeClass();
+        //get the ID of the option selected
+        var target_id = $(this).attr('id');
+        $('body').addClass(target_id);
+    });
 
 });
 

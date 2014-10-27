@@ -1,3 +1,32 @@
+/* Options Nav Bar */
+.options{
+	display:block;
+	float:left;
+	position:fixed;
+	top:0;
+	left:calc(50% - 112px);
+	background:#eee;
+}
+.options ul{
+	float:left;
+	display: table;
+}
+.options ul li{
+    width: 100px !important;
+    height: 30px !important;
+    display: table-cell;
+    float: none !important;
+    text-align: center !important;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding: 0 !important;
+}
+.options ul li.active{
+	background:#ccc;
+}
+
+/* Sitemap General */
 body {
 	background: #222;
 	padding: 10px;
@@ -90,4 +119,15 @@ and (max-width : 750px) {
 	a.home {
 		text-align: left;
 	}
+}
+/* Option 2 */
+body.o2 li {
+	float: none;
+	width: 100%;
+	padding: 20px 0 0 25px;
+	text-align: left;
+	border-left: 1px dotted #fff;
+}
+body.o2 a.home {
+	text-align: left;
 }
