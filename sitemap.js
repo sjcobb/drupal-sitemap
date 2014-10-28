@@ -1,44 +1,50 @@
-/*jQuery.fn.doFade = function(settings) {
+function visitBfs(node, func) {
+    var q = [node];
+    while (q.length > 0) {
+        node = q.shift();
+        if (func) {
+            func(node);
+        }
+        for (var i=0; i<node.children.length; i++) {
+            if (node.children.length > 0 ) {
+                var child = node.children[i];
+                var breadth = node.children.length;
+                index = _.indexOf(node.children, node);
+                if (child.tagName == "LI") {
 
-    // if no paramaters supplied...
-	settings = jQuery.extend({
-		fadeColor: "black",
-		duration: 200,
-		fadeOn: 0.95,
-		fadeOff: 0.5
-	}, settings);
+                    $( child ).addClass( "width-" + breadth );
+                    // console.log(child);   /* displays item's html tag / attributes  */
+                    // console.log(node.children.length);   /* displays number of items in level (breadth) */
+                    // console.log(child.tagName);
+                    // console.log($( child ).siblings());
+                }
+            }
+        }
+ 
+        _.each(node.children, function (child) {
+            q.push(child);
+        });
+    }
+}
 
-    var duration = settings.duration;
-    var fadeOff = settings.fadeOff;
-    var fadeOn = settings.fadeOn;
-    var fadeColor = settings.fadeColor;
-        
-    $(this).hover(function(){
-	  $(this)
-	      .stop()
-	      .data("origColor", $(this).css("background-color"))
-	      .animate({
-	          opacity: fadeOn,
-	          backgroundColor: fadeColor
-	      }, duration)
-	}, function() {
-	  $(this)
-	      .stop()
-	      .animate({
-	          opacity: fadeOff,
-	          backgroundColor: $(this).data("origColor")
-	      }, duration)
-	});
+jQuery(document).ready(function ($) {
+    var node = document.getElementsByClassName('menu')[0];
+    visitBfs(node);
 
-};
+    $('.options li').on('click', function(event){
+        //remove all active classes from the options
+        $('.options li').each(function(index){
+            $(this).removeClass('active');
+        });
+        $(this).addClass('active');
+        //remove all classes from the nav
+        $('body').removeClass();
+        //get the ID of the option selected
+        var target_id = $(this).attr('id');
+        $('body').addClass(target_id);
+    });
 
-$(function(){
+    $('body').prepend('<a href="/" class="home"><i class="fa fa-home"></i></a>');
 
-   $("li").css("opacity", "0.5");
-   
-   $("li").doFade({ fadeColor: "#362b40" });
-   $("li li").doFade({ fadeColor: "#354668" });
-   $("li li li").doFade({ fadeColor: "#304531" });
-   $("li li li li").doFade({ fadeColor: "#72352d" });
+});
 
-});*/
