@@ -63,42 +63,19 @@ ul.menu > li:before {
 	width: 25px;
 	height: 60px;
 	margin-left: -25px;
-	/*border-top: 1px solid #fff; */
-	/*border-right: 1px solid #fff;*/
 	border-bottom: 1px solid #fff;
-	/*border-left: 1px solid #fff;*/
-}
-body > ul.menu {
-	/*border-bottom: 1px solid #fff;
-	border-left: none;
-	margin-top: 50px;
-	text-align: center;*/
-}
-body > ul.menu:before {
-	/*content: "\f015 ";
-	font-family: FontAwesome;
-	font-size: 34px;
-	display: block;
-	color: #fff;*/
 }
 body > ul.menu > li:before {
 	border-left: 1px solid #fff;
 }
 ul.menu > li a {
-	/* position: relative; */
-	/* top: -30px; */
 	margin-top: -20px;
 }
 li {
-	/* display: inline-block; */
 	float: none;
 	width: 100%;
 	padding: 0 0 0 25px;
 	text-align: left;
-	/*border-top: 1px solid #fff;*/
-	/*border-right: 1px solid #fff;*/
-	/*border-bottom: 1px solid #fff;*/
-	/* border-left: 1px solid #fff; */
 	box-sizing: border-box;
 }
 li a { background: #06064B; } 
@@ -119,20 +96,7 @@ body > ul.menu > li.width-8 { width: 12.5%; }
 body > ul.menu > li.width-9 { width: 11%; }
 body > ul.menu > li.width-10 { width: 10%; }
 
-@media only screen 
-and (max-width : 750px) {
-	li {
-		float: none;
-		width: 100% !important;
-		padding: 20px 0 0 25px;
-		text-align: left;
-		border-left: 1px dotted #fff;
-	}
-	a.home {
-		text-align: left;
-	}
-}
-/* Option 2 */
+/* Vertical Allignment (Option 2) */
 body.o2 > ul.menu > li {
 	float: none;
 	width: 100%;

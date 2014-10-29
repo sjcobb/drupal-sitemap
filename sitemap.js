@@ -44,6 +44,7 @@ jQuery(document).ready(function ($) {
         $('body').addClass(target_id);
     });
 
+    //add HTML to display home link (font-awesome icon)
     $('body').prepend('<a href="/" class="home"><i class="fa fa-home"></i></a>');
 
 });
